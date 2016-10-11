@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "babel-node": "babel-node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.16.0",
     "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
     "jsdom": "^9.6.0",
     "mocha": "^3.1.0",
     "react-hot-loader": "^3.0.0-beta.5",
@@ -22,10 +25,15 @@
     "presets": [
       "es2015",
       "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
     ]
   },
   "dependencies": {
+    "immutable": "^3.8.1",
     "react": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2"
   }
 }
